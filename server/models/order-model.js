@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema
-
+ 
 const OrderModel =  new Schema({
     email: {type: String,required: true},
     orderedItems: [{
