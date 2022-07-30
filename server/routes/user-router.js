@@ -7,6 +7,6 @@ const router = express.Router();
 router.post("/userLogin",UserCtrl.login);
 router.post("/userRegister",UserCtrl.register);
 router.get("/viewMenu",UserCtrl.getMenu);
-router.get("/placeOrder",UserCtrl.placeOrder);
+router.post("/placeOrder",UserCtrl.placeOrder);
 
 module.exports = router;
