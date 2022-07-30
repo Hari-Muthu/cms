@@ -101,7 +101,6 @@ login = (req,res) => {
         }
         return res.status(200).json({success: true,data: user})
 })}
-// .catch(err => console.log(err))}
 
 register = (req,res) => {
     const {name,email,phoneno,password} = req.body;
