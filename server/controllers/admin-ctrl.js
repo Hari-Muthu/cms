@@ -19,7 +19,27 @@ login = (req,res) => {
 }
 
 getOrders = (req,res) => {
-    res.send("GetOrders")
+    orderModel.find({isActive:true},(err,activeOrder)=>{
+        if(err){
+            res.status(400).json({
+                success:false,
+                error:err
+            })
+        }
+        else if(activeOrder.length==0){
+            res.status(404).json({
+                success:false,
+                message:"No active orders"
+            })
+        }
+        else{
+            console.log(activeOrder);
+            res.status(200).json({
+                success:true,
+                activeOrders:activeOrder
+            })
+        }
+    })
 }
  
 updateMenu = (req,res) => {

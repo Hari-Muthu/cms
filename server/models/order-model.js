@@ -8,6 +8,7 @@ const OrderModel =  new Schema({
         quantity: {type: Number, required: true},
         price: { type: Number,required: true}
     }],
+    isActive: {type: Boolean, default: true}
     // total: {
     //     type: Number,
     //     required: true
