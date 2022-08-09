@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/CMS", { useNewUrlParser: true })
+  .connect(process.env.DATABASE, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch((e) => {
     console.error("Connection error", e.message);
   });
